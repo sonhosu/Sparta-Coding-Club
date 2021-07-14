@@ -1,8 +1,11 @@
-package com.sparta.week01;
+package com.week01_hwk.prac;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+
+@EnableJpaAuditing
 @SpringBootApplication
 public class Week01Application {
 

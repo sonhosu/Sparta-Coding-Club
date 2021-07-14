@@ -1,24 +1,41 @@
-package com.sparta.week01.controller;
+package com.week01_hwk.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.week01_hwk.PersonRequestDto.PersonRequestDto;
+import com.week01_hwk.Repository.PersonRepository;
+import com.week01_hwk.Service.PersonService;
+import com.week01_hwk.model.Person;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-
+@RequiredArgsConstructor
 public class PersonController {
 
-    @GetMapping("/myinfo")
-    public Person getPerson(){
-        Person person = new Person();
-        person.setName("son");
-        person.setAddress("seoul");
-        person.setAge(25);
-        person.setJob("no");
+    private PersonRepository personRepository;
+    private PersonService personService;
 
+    @GetMapping("/api/persons")
+    public List<Person> getPerson(){
 
-
-        return person;
+        return personRepository.findAll();
     }
+
+    @PostMapping("/api/persons")
+    public Person createPerson(@RequestBody PersonRequestDto requestDto ){
+        Person person = new Person(requestDto);
+
+        return personRepository.save(person);
+    }
+
+    @PutMapping("/api/persons{id}")
+    public Long upatePerson(@PathVariable Long id , @RequestBody PersonRequestDto requestDto ){
+
+        return personService.update(id,requestDto);
+    }
+
 
 
 }
