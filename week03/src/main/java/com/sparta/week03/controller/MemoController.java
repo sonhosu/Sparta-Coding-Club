@@ -25,7 +25,7 @@ public class MemoController {
         return memoRepository.save(memo);
     }
 
-    @PutMapping("/api/memos{id}")
+    @PutMapping("/api/memos/{id}")
     public Long updateMemo(@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {
         memoService.update(id, requestDto);
         return id;
@@ -37,7 +37,7 @@ public class MemoController {
         return memoRepository.findAllByOrderByModifiedAtDesc();
     }
 
-    @DeleteMapping("/api/memos{id}")
+    @DeleteMapping("/api/memos/{id}")
     public Long deleteMemo(@PathVariable Long id) {
         memoRepository.deleteById(id);
         return id;
