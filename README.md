@@ -78,3 +78,20 @@ this.variable = variable;
 4.delete(D)
 
 - 주소의 명사는 복수형, 동사x
+
+## 어노테이션
+1.@RequiredArgsConstructor
+ - 의존성 주입
+
+2.@Transactional
+ - db에 반영을 시켜주는어노테이션
+
+
+## jquery 함수
+- trim() = 앞뒤 공백 제거하고 출력
+- val() =해당 하는 값
+- empty(); 삭제 
+
+## 자바스크립트
+- window.location.reload(); = 새로고침
+
