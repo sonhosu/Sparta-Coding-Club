@@ -14,11 +14,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 public class ProductRestController {
-       final ProductRepository productRepository;
+
+    final ProductRepository productRepository;
 
 
     @GetMapping("/api/products")
     public List<Product> getProducts() {
+
         return productRepository.findAll();
     }
     @PostMapping("/api/products")
