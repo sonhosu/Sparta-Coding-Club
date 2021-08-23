@@ -1,4 +1,7 @@
 # Sparta-Coding-Club
+## 실행 url
+http://son.lolcalii.com:8089/
+
 ## 개발환경
 1. 인텔리제이
 2. arc
